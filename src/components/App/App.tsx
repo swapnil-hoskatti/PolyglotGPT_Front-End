@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import axios from "axios";
 import PromptInput from "../PromptInput/PromptInput";
 import './App.css';
