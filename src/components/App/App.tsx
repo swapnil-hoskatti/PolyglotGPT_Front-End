@@ -4,10 +4,11 @@ import PromptInput from "../PromptInput/PromptInput";
 import './App.css';
 import {ResponseInterface} from "../PromptResponseList/response-interface";
 import PromptResponseList from "../PromptResponseList/PromptResponseList";
+import Model from '../Model/Model';
 
 type ModelValueType = 'gpt' | 'codex' | 'image';
 const App = () => {
-
+  Model();
   const [responseList, setResponseList] = useState<ResponseInterface[]>([]);
   const [prompt, setPrompt] = useState<string>('');
   const [promptToRetry, setPromptToRetry] = useState<string | null>(null);
@@ -154,15 +155,6 @@ const App = () => {
         </div>
         )
       }
-      {/* <div id="model-select-container">
-        <label htmlFor="model-select">Select model:</label>
-        <select id="model-select" value={modelValue} onChange={(event) => setModelValue(event.target.value as ModelValueType)}>
-          <option value="gpt">GPT-3 (Understand and generate natural language )</option>
-          <option value="codex">Codex (Understand and generate code, including translating natural language to code)
-          </option>
-          <option value="image">Create Image (Create AI image using DALL·E models)</option>
-        </select>
-      </div> */}
       <div id="input-container">
         <PromptInput
           prompt={prompt}
